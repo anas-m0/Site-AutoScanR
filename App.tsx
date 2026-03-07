@@ -9,6 +9,7 @@ import { Car, Mail, Phone, ArrowLeft, Instagram, Twitter, Linkedin, MapPin } fro
 
 const App: React.FC = () => {
   const [currentView, setView] = useState<ViewState>(ViewState.HOME);
+  const [userRole, setUserRole] = useState<'motorist' | 'garage' | null>(null);
 
   const renderContent = () => {
     switch (currentView) {
@@ -30,7 +31,7 @@ const App: React.FC = () => {
                 <h2 className="font-display text-3xl font-bold text-brand-dark">Bon retour !</h2>
                 <p className="text-gray-500 mt-2">Accédez à votre espace conducteur</p>
               </div>
-              <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setView(ViewState.MOTORIST_DASHBOARD); }}>
+              <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setUserRole('motorist'); setView(ViewState.MOTORIST_DASHBOARD); }}>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Email</label>
                   <input type="email" className="block w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-brand-primary focus:border-transparent transition bg-gray-50 focus:bg-white" placeholder="vous@exemple.com" />
@@ -62,7 +63,7 @@ const App: React.FC = () => {
                 <h2 className="font-display text-3xl font-bold text-brand-dark">Espace Pro</h2>
                 <p className="text-gray-500 mt-2">Gérez vos opportunités AutoScanR</p>
               </div>
-              <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setView(ViewState.GARAGE_DASHBOARD); }}>
+              <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setUserRole('garage'); setView(ViewState.GARAGE_DASHBOARD); }}>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Identifiant Garage</label>
                   <input type="text" className="block w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-brand-accent focus:border-transparent transition bg-gray-50" defaultValue="MecaExpert_83" />
@@ -97,62 +98,58 @@ const App: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen font-sans text-brand-dark">
-      {currentView !== ViewState.MOTORIST_LOGIN && currentView !== ViewState.GARAGE_LOGIN && (
-        <Navbar currentView={currentView} setView={setView} />
-      )}
+      <Navbar currentView={currentView} setView={setView} userRole={userRole} setUserRole={setUserRole} />
 
       <main className="flex-grow">
         {renderContent()}
       </main>
 
-      {currentView !== ViewState.MOTORIST_LOGIN && currentView !== ViewState.GARAGE_LOGIN && (
-        <footer className="bg-brand-dark text-gray-400 py-16 border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
-            <div className="col-span-1 md:col-span-2 space-y-6">
-              <div className="flex items-center">
-                <img src="/logo.png" alt="AutoScanR Logo" className="h-12 w-auto" />
-              </div>
-              <p className="text-base max-w-sm leading-relaxed">
-                La première borne de diagnostic autonome qui redonne le pouvoir aux automobilistes. Transparence, pédagogie et économies.
-              </p>
-              <div className="flex gap-4 pt-2">
-                {[Instagram, Twitter, Linkedin].map((Icon, i) => (
-                  <a key={i} href="#" className="bg-white/5 hover:bg-brand-primary p-2 rounded-full text-white transition-all">
-                    <Icon size={18} />
-                  </a>
-                ))}
-              </div>
+      <footer className="bg-brand-dark text-gray-400 py-16 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
+          <div className="col-span-1 md:col-span-2 space-y-6">
+            <div className="flex items-center">
+              <img src="/logo.png" alt="AutoScanR Logo" className="h-12 w-auto" />
             </div>
-
-            <div>
-              <h4 className="font-display font-bold text-white text-lg mb-6">Plateforme</h4>
-              <ul className="space-y-4 text-sm">
-                <li><button onClick={() => setView(ViewState.HOME)} className="hover:text-brand-primary transition-colors">Accueil</button></li>
-                <li><button onClick={() => setView(ViewState.MEDIATION_CENTER)} className="hover:text-brand-primary transition-colors">Médiation & Conseils</button></li>
-                <li><button onClick={() => setView(ViewState.GARAGE_LOGIN)} className="hover:text-brand-primary transition-colors">Espace Garage</button></li>
-                <li><a href="#" className="hover:text-brand-primary transition-colors">Trouver une borne</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-display font-bold text-white text-lg mb-6">Contact</h4>
-              <ul className="space-y-4 text-sm">
-                <li className="flex items-center gap-3"><Mail size={16} className="text-brand-primary" /> support@autoscanr.com</li>
-                <li className="flex items-center gap-3"><Phone size={16} className="text-brand-primary" /> +33 1 23 45 67 89</li>
-                <li className="flex items-center gap-3"><MapPin size={16} className="text-brand-primary" /> Paris, France</li>
-              </ul>
+            <p className="text-base max-w-sm leading-relaxed">
+              La première borne de diagnostic autonome qui redonne le pouvoir aux automobilistes. Transparence, pédagogie et économies.
+            </p>
+            <div className="flex gap-4 pt-2">
+              {[Instagram, Twitter, Linkedin].map((Icon, i) => (
+                <a key={i} href="#" className="bg-white/5 hover:bg-brand-primary p-2 rounded-full text-white transition-all">
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
-          <div className="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs">
-            <p>© 2023 AutoScanR. Tous droits réservés.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white">Confidentialité</a>
-              <a href="#" className="hover:text-white">CGU</a>
-              <a href="#" className="hover:text-white">Cookies</a>
-            </div>
+
+          <div>
+            <h4 className="font-display font-bold text-white text-lg mb-6">Plateforme</h4>
+            <ul className="space-y-4 text-sm">
+              <li><button onClick={() => setView(ViewState.HOME)} className="hover:text-brand-primary transition-colors">Accueil</button></li>
+              <li><button onClick={() => setView(ViewState.MEDIATION_CENTER)} className="hover:text-brand-primary transition-colors">Médiation & Conseils</button></li>
+              <li><button onClick={() => setView(ViewState.GARAGE_LOGIN)} className="hover:text-brand-primary transition-colors">Espace Garage</button></li>
+              <li><a href="#" className="hover:text-brand-primary transition-colors">Trouver une borne</a></li>
+            </ul>
           </div>
-        </footer>
-      )}
+
+          <div>
+            <h4 className="font-display font-bold text-white text-lg mb-6">Contact</h4>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-center gap-3"><Mail size={16} className="text-brand-primary" /> support@autoscanr.com</li>
+              <li className="flex items-center gap-3"><Phone size={16} className="text-brand-primary" /> +33 1 23 45 67 89</li>
+              <li className="flex items-center gap-3"><MapPin size={16} className="text-brand-primary" /> Paris, France</li>
+            </ul>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs">
+          <p>© 2023 AutoScanR. Tous droits réservés.</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-white">Confidentialité</a>
+            <a href="#" className="hover:text-white">CGU</a>
+            <a href="#" className="hover:text-white">Cookies</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
