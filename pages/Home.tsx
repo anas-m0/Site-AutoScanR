@@ -59,7 +59,7 @@ const Home: React.FC<HomeProps> = ({ setView }) => {
                <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-brand-primary/20 via-brand-primary/5 to-transparent"></div>
                <div className="absolute -bottom-40 -left-60 w-[600px] h-[600px] bg-brand-primary/20 rounded-full blur-[120px]"></div>
                <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-brand-light/10 rounded-full blur-[100px]"></div>
-               <img src="https://images.unsplash.com/photo-1493238792015-1a419ae4ce61?auto=format&fit=crop&q=80" alt="Background" className="w-full h-full object-cover opacity-15 mix-blend-overlay" />
+               <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80" alt="Background" className="w-full h-full object-cover opacity-15 mix-blend-overlay" />
 
                {/* Subtle grid pattern */}
                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgwVjB6IiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48cGF0aCBkPSJNMCAwdjQwTTAgMGg0MCIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiLz48L3N2Zz4=')] opacity-50"></div>
@@ -79,7 +79,6 @@ const Home: React.FC<HomeProps> = ({ setView }) => {
                      <h1 className="font-display text-5xl lg:text-7xl font-bold leading-[1.15] tracking-tight">
                         Le garagiste <br />
                         <span className="relative inline-block mt-2">
-                           <span className="absolute -inset-1 bg-gradient-to-r from-brand-primary to-brand-light blur opacity-30"></span>
                            <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-light to-white">digital & autonome</span>
                         </span>
                      </h1>
@@ -189,16 +188,16 @@ const Home: React.FC<HomeProps> = ({ setView }) => {
          </section>
 
          {/* COMPATIBILITY CHECKER (FLOATING) */}
-         <div className="relative z-20 max-w-5xl mx-auto px-4 -mt-24 mb-16 animate-fade-in-up">
-            <div className="bg-white/95 rounded-[2rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] p-8 md:p-12 border border-white/80 backdrop-blur-2xl flex flex-col md:flex-row items-center gap-10 md:gap-14 relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-brand-primary/10 to-brand-light/5 rounded-full blur-[60px] -z-10 translate-x-1/3 -translate-y-1/3"></div>
+         <div className="relative z-20 max-w-5xl mx-auto px-4 -mt-16 mb-12 animate-fade-in-up">
+            <div className="bg-white/95 rounded-[2rem] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] p-6 md:p-8 border border-white/80 backdrop-blur-2xl flex flex-col md:flex-row items-center gap-8 md:gap-10 relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-brand-primary/10 to-brand-light/5 rounded-full blur-[50px] -z-10 translate-x-1/3 -translate-y-1/3"></div>
 
-               <div className="flex-1 text-center md:text-left space-y-4">
-                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-primary/10 to-brand-primary/5 text-brand-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-brand-primary/10">
+               <div className="flex-1 text-center md:text-left space-y-3">
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-primary/10 to-brand-primary/5 text-brand-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest border border-brand-primary/10">
                      <CheckCircle2 size={14} /> Vérification Instantanée
                   </div>
-                  <h2 className="font-display text-3xl md:text-4xl font-bold text-gray-900 leading-tight">Vérifiez si votre véhicule est <span className="text-brand-primary">compatible</span></h2>
-                  <p className="text-gray-600 text-lg">AutoScanR fonctionne avec 99% des véhicules construits après : <br /><span className="font-bold text-gray-800">Essence (2001) / Diesel (2004).</span></p>
+                  <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Votre véhicule est-il <span className="text-brand-primary">compatible ?</span></h2>
+                  <p className="text-gray-600 text-base">AutoScanR fonctionne avec 99% des véhicules construits après : <br /><span className="font-bold text-gray-800">Essence (2001) / Diesel (2004).</span></p>
                </div>
 
                <div className="w-full md:w-auto flex-1 max-w-md">
@@ -218,7 +217,7 @@ const Home: React.FC<HomeProps> = ({ setView }) => {
                            value={plate}
                            onChange={(e) => setPlate(e.target.value.toUpperCase())}
                            placeholder="AA-123-BB"
-                           className="w-full h-20 px-4 text-3xl md:text-4xl font-display font-medium uppercase tracking-[0.2em] text-center text-gray-900 placeholder-gray-300 outline-none bg-transparent relative z-10"
+                           className="w-full h-[4.5rem] md:h-20 px-4 text-3xl md:text-4xl font-display font-medium uppercase tracking-[0.2em] text-center text-gray-900 placeholder-gray-300 outline-none bg-transparent relative z-10"
                            maxLength={9}
                         />
 
@@ -267,104 +266,80 @@ const Home: React.FC<HomeProps> = ({ setView }) => {
          <section className="py-32 bg-gray-50">
             <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
                <div className="text-center mb-20 max-w-3xl mx-auto">
-                  <span className="text-brand-primary font-bold tracking-wider text-sm uppercase mb-3 block">Pourquoi nous choisir</span>
-                  <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">Le diagnostic, <br />sans zone d'ombre.</h2>
-                  <p className="text-xl text-gray-600">Une approche révolutionnaire de l'entretien automobile, centrée sur la transparence totale et votre autonomie.</p>
+                  <span className="text-brand-primary font-bold tracking-wider text-sm uppercase mb-3 block">Le Concept AutoScanR</span>
+                  <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">Votre voiture parle. <br />Nous la traduisons.</h2>
+                  <p className="text-xl text-gray-600">AutoScanR est la première borne publique de diagnostic automobile en libre-service. Branchez. Scannez. Comprenez enfin ce qui se passe sous le capot.</p>
                </div>
 
-               <div className="grid md:grid-cols-3 md:grid-rows-2 gap-6 lg:gap-8 auto-rows-[300px] md:auto-rows-auto md:h-[650px]">
-                  {/* Large Left Item */}
-                  <div className="md:col-span-1 md:row-span-2 bg-gradient-to-b from-brand-beige to-[#ebe6db] rounded-[2.5rem] p-8 lg:p-10 flex flex-col justify-between relative overflow-hidden group shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] transition-all duration-500 hover:-translate-y-2 border border-white/50">
-                     <div className="absolute top-0 right-0 p-12 bg-white/50 rounded-bl-[120px] transition-transform duration-700 group-hover:scale-[1.3] group-hover:bg-brand-primary/10"></div>
-                     <div className="relative z-10 flex-1">
-                        <div className="bg-white/80 backdrop-blur-md w-16 h-16 rounded-2xl flex items-center justify-center shadow-[0_10px_20px_rgba(0,0,0,0.05)] mb-8 text-brand-primary group-hover:text-brand-dark transition-colors duration-300 ring-1 ring-black/5">
-                           <ShieldCheck size={36} />
+
+               {/* Concept Explanation */}
+               <div className="max-w-4xl mx-auto mb-16">
+                  <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+                     <div className="grid md:grid-cols-2 gap-10 items-center">
+                        <div>
+                           <h3 className="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">Une borne en libre-service,<br /> accessible à tous.</h3>
+                           <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                              AutoScanR installe des bornes de diagnostic OBD-II dans les parkings, stations-service et centres commerciaux. Comme un distributeur automatique, mais pour la santé de votre voiture.
+                           </p>
+                           <p className="text-gray-600 text-lg leading-relaxed">
+                              Branchez le câble, lancez le scan, et recevez un rapport clair traduit en français — sans jargon, sans engagement, sans rendez-vous.
+                           </p>
                         </div>
-                        <h3 className="font-display text-3xl font-bold text-gray-900 mb-4 leading-tight">Anti-Arnaque & <br />Transparence</h3>
-                        <p className="text-gray-600 mb-8 text-lg font-light leading-relaxed">Ne changez plus de pièces inutilement. Notre diagnostic est 100% neutre : nous ne vendons pas de réparations, nous vous disons la vérité.</p>
-                        <ul className="space-y-4">
-                           <li className="flex items-center gap-3 text-base text-gray-800 font-medium"><div className="bg-green-100 rounded-full p-1 text-green-600"><CheckCircle2 size={16} /></div> Rapport objectif</li>
-                           <li className="flex items-center gap-3 text-base text-gray-800 font-medium"><div className="bg-green-100 rounded-full p-1 text-green-600"><CheckCircle2 size={16} /></div> Preuve pour la revente</li>
-                           <li className="flex items-center gap-3 text-base text-gray-800 font-medium"><div className="bg-green-100 rounded-full p-1 text-green-600"><CheckCircle2 size={16} /></div> Zéro devis forcé</li>
-                        </ul>
-                     </div>
-                     <div className="mt-10 -mx-4 -mb-4 overflow-hidden rounded-2xl shadow-2xl relative">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&q=80" alt="Car check" className="object-cover h-56 w-full transform group-hover:scale-105 transition-transform duration-700" />
-                        <div className="absolute bottom-4 left-4 right-4 z-20 flex justify-between items-center text-white">
-                           <span className="text-sm font-medium bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">Achat Serein</span>
-                           <span className="flex items-center"><Star size={14} className="text-yellow-400 mr-1" /> Très Évalué</span>
-                        </div>
-                     </div>
-                  </div>
-
-                  {/* Top Right Wide - Glassmorphism */}
-                  <div className="md:col-span-2 bg-[#0c142b] text-white rounded-[2.5rem] p-8 lg:p-10 relative overflow-hidden group shadow-[0_15px_40px_-15px_rgba(0,148,183,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(0,148,183,0.4)] transition-all duration-500 hover:-translate-y-2 border border-brand-primary/20">
-                     <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-transparent to-brand-accent/10 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
-                     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-primary/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 group-hover:bg-brand-light/20 transition-colors duration-700"></div>
-
-                     <div className="relative z-10 flex flex-col md:flex-row items-center gap-10 h-full">
-                        <div className="flex-1 flex flex-col justify-center">
-                           <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center backdrop-blur-xl mb-6 text-brand-light border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
-                              <Smartphone size={32} />
-                           </div>
-                           <h3 className="font-display text-3xl font-bold mb-4 tracking-tight">De l'ingénierie au français.</h3>
-                           <p className="text-gray-300 text-lg font-light leading-relaxed">Fini le jargon barbare des garagistes. Nos algorithmes d'IA traduisent instantanément les codes défauts P0xxx en informations claires et actions concrètes.</p>
-                        </div>
-
-                        {/* App UI Simulation */}
-                        <div className="w-full md:w-[45%] bg-white/5 backdrop-blur-2xl rounded-2xl p-5 border border-white/10 shadow-2xl relative">
-                           <div className="absolute -top-3 -right-3 w-8 h-8 bg-red-500 rounded-full animate-ping opacity-20"></div>
-                           <div className="absolute -top-3 -right-3 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white shadow-lg border-2 border-[#0c142b] z-20"><Zap size={14} /></div>
-
-                           <div className="bg-[#121c38] rounded-xl p-4 mb-3 border border-red-500/20 shadow-inner">
-                              <div className="flex justify-between items-start mb-2">
-                                 <div className="font-mono text-xl font-bold text-red-400">P0300</div>
-                                 <span className="text-[10px] uppercase font-bold text-gray-500 bg-gray-800 px-2 py-0.5 rounded">Moteur</span>
+                        <div className="bg-gradient-to-br from-brand-dark to-[#0c1e4a] rounded-2xl p-6 text-white">
+                           <div className="flex items-start gap-4 mb-5">
+                              <div className="bg-white/10 w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border border-white/10">
+                                 <Smartphone size={24} className="text-brand-light" />
                               </div>
-                              <div className="text-sm font-bold text-gray-200">Ratés d'allumage aléatoires</div>
+                              <div>
+                                 <div className="font-mono text-lg font-bold text-red-400 mb-1">P0300</div>
+                                 <div className="text-sm text-gray-400">Ratés d'allumage aléatoires</div>
+                              </div>
                            </div>
-
-                           <div className="bg-gradient-to-r from-brand-primary/10 to-transparent p-4 rounded-xl border-l-4 border-brand-primary text-sm text-gray-300 leading-relaxed font-medium">
-                              <span className="text-brand-light font-bold">Traduction :</span> Le carburant brûle mal dans les cylindres. Cela vient souvent de <span className="text-white bg-white/10 px-1 rounded">bougies d'allumage usées</span> ou de bobines défectueuses.
+                           <div className="bg-brand-primary/15 rounded-xl p-4 border-l-4 border-brand-primary text-sm text-gray-300 leading-relaxed">
+                              <span className="text-brand-light font-bold">Traduction :</span> Le carburant brûle mal dans les cylindres. Cela vient souvent de <span className="text-white font-medium">bougies d'allumage usées</span> ou de bobines défectueuses.
                            </div>
                         </div>
                      </div>
                   </div>
+               </div>
 
-                  {/* Bottom Right 1 */}
-                  <div className="bg-white border-2 border-transparent shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] rounded-[2.5rem] p-8 hover:border-brand-primary/30 transition-all duration-500 group cursor-pointer hover:shadow-[0_20px_40px_-15px_rgba(0,148,183,0.15)] flex flex-col justify-between hover:-translate-y-2 relative overflow-hidden" onClick={() => setView(ViewState.MEDIATION_CENTER)}>
-                     <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-gray-50 rounded-full mix-blend-multiply group-hover:bg-brand-primary/5 transition-colors duration-500"></div>
-                     <div>
-                        <div className="bg-gray-50 group-hover:bg-brand-primary/5 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-brand-dark group-hover:text-brand-primary transition-all duration-500 group-hover:scale-110 shadow-sm border border-gray-100">
-                           <Activity size={28} />
-                        </div>
-                        <h3 className="font-display text-2xl font-bold text-gray-900 mb-3">Centre de Médiation</h3>
-                        <p className="text-gray-500 text-lg leading-relaxed mix-blend-multiply">Accédez à des schémas, tutos, et devis moyens pour chaque panne détectée.</p>
+               {/* Avantages */}
+               <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+                  <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:border-brand-primary/20 hover:shadow-md transition-all duration-300 group">
+                     <div className="bg-brand-primary/10 w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-brand-primary group-hover:scale-110 transition-transform">
+                        <ShieldCheck size={28} />
                      </div>
-                     <div className="mt-6 flex items-center text-brand-primary font-bold text-base group-hover:translate-x-3 transition-transform duration-300">
-                        Explorer la ressource <ArrowRight size={18} className="ml-2" />
-                     </div>
+                     <h4 className="font-display text-xl font-bold text-gray-900 mb-2">100% neutre et objectif</h4>
+                     <p className="text-gray-600 leading-relaxed">Nous ne vendons aucune réparation. Vous obtenez un diagnostic impartial, sans conflit d'intérêt. Idéal avant un achat d'occasion.</p>
                   </div>
 
-                  {/* Bottom Right 2 - Premium CTA Gradient */}
-                  <div className="bg-gradient-to-br from-brand-primary via-[#00a8d4] to-brand-light text-white rounded-[2.5rem] p-8 relative overflow-hidden group hover:shadow-[0_20px_40px_-10px_rgba(0,148,183,0.5)] transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between">
-                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=')] opacity-30 mix-blend-overlay group-hover:scale-110 transition-transform duration-1000"></div>
-                     <div className="absolute -bottom-16 -right-16 w-48 h-48 bg-white/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-
-                     <div className="relative z-10">
-                        <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mb-6 backdrop-blur-xl border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1)] group-hover:scale-110 transition-transform duration-500 group-hover:bg-white text-white group-hover:text-brand-primary">
-                           <Clock size={28} className="transition-colors duration-500" />
-                        </div>
-                        <h3 className="font-display text-2xl font-bold mb-3 drop-shadow-md">Rapide & Pas Cher</h3>
-                        <p className="text-lg text-white/90 font-medium">Diagnostic pro dès <span className="font-bold text-xl text-white bg-white/20 px-2 rounded-md mx-1">15€</span></p>
+                  <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:border-brand-primary/20 hover:shadow-md transition-all duration-300 group">
+                     <div className="bg-brand-accent/10 w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-brand-accent group-hover:scale-110 transition-transform">
+                        <Clock size={28} />
                      </div>
+                     <h4 className="font-display text-xl font-bold text-gray-900 mb-2">5 minutes, dès 15€</h4>
+                     <p className="text-gray-600 leading-relaxed">Un diagnostic complet en quelques minutes seulement. Sans rendez-vous, disponible 24h/24 et 7j/7 près de chez vous.</p>
+                  </div>
 
-                     <div className="relative z-10 mt-6 inline-flex self-start">
-                        <span className="bg-white text-brand-primary px-4 py-2 rounded-xl font-bold text-sm shadow-lg group-hover:shadow-xl transition-shadow flex items-center gap-2">
-                           En 5 minutes chrono
-                        </span>
+                  <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:border-brand-primary/20 hover:shadow-md transition-all duration-300 group">
+                     <div className="bg-green-100 w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-green-600 group-hover:scale-110 transition-transform">
+                        <Activity size={28} />
                      </div>
+                     <h4 className="font-display text-xl font-bold text-gray-900 mb-2">Compréhensible par tous</h4>
+                     <p className="text-gray-600 leading-relaxed">Les codes défauts techniques sont traduits en langage clair par notre IA. Vous comprenez enfin ce qui ne va pas, sans être expert.</p>
+                  </div>
+               </div>
+
+               {/* CTA Banner */}
+               <div className="max-w-4xl mx-auto">
+                  <div className="bg-gradient-to-r from-brand-primary to-brand-light rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
+                     <div className="text-white text-center md:text-left">
+                        <h4 className="font-display text-2xl font-bold mb-1">Essayez AutoScanR dès aujourd'hui</h4>
+                        <p className="text-white/80 text-lg">Trouvez la borne la plus proche de vous et scannez votre véhicule.</p>
+                     </div>
+                     <button onClick={() => document.getElementById('map-section')?.scrollIntoView({ behavior: 'smooth' })} className="bg-white text-brand-primary px-8 py-4 rounded-xl font-bold text-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 shrink-0">
+                        <MapPin size={20} /> Trouver une borne
+                     </button>
                   </div>
                </div>
             </div>

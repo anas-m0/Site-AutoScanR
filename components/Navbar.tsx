@@ -40,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, setView, userRole, setUser
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass-dark shadow-lg py-2' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-primary/90 backdrop-blur-md shadow-lg py-2' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
@@ -90,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, setView, userRole, setUser
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden glass-dark border-t border-white/10 absolute w-full">
+        <div className="md:hidden bg-brand-primary/95 backdrop-blur-md border-t border-white/10 absolute w-full">
           <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col">
             <button onClick={() => handleNav(ViewState.HOME)} className="text-gray-200 hover:text-white hover:bg-white/5 block px-3 py-3 rounded-xl text-base font-medium w-full text-left">Accueil</button>
             <button onClick={() => handleNav(ViewState.ABOUT_US)} className="text-gray-200 hover:text-white hover:bg-white/5 block px-3 py-3 rounded-xl text-base font-medium w-full text-left">Qui sommes-nous ?</button>
